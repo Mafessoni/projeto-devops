@@ -6,8 +6,8 @@ COPY tsconfig.json ./
 COPY src /src
 
 
-RUN yarn install --production --ignore-engines
-RUN yarn build
+RUN npm install --production --ignore-engines
+RUN npm build
 
 RUN cd ./dist
 
