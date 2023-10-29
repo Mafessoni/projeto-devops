@@ -1,0 +1,27 @@
+name: CI-CD
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch: 
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositorio
+        uses: actions/checkout@v4.1.1
+        
+      - name: Docker Login
+        uses: docker/login-action@v3.0.0
+        with:
+          Username: ${{secrets.DOCKER_USER}}
+          Password: ${{secrets.DOCKER_PASS}}
+      - name: Build and push Docker images        
+        uses: docker/build-push-action@v5.0.0
+        with:
+          context: ./API/.
+          file: ./API/Dockerfile
+          push: true
+          tags:
+            mafessoni/projeto-devops:v${{ github.run_number }}
+          
+          
