@@ -1,3 +1,5 @@
+USE DEVOPS;
+
 CREATE TABLE IF NOT EXISTS `ENTIDADES` (
 	ID_ENTIDADES INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	NOME VARCHAR(150),
@@ -18,3 +20,10 @@ CREATE TABLE IF NOT EXISTS `OPERADORES` (
 	SENHA VARCHAR(100),
 	ATIVO TINYINT
 );
+
+SET character_set_client = utf8;
+SET character_set_connection = utf8;
+SET character_set_results = utf8;
+SET collation_connection = utf8_general_ci;
+
+INSERT INTO OPERADORES (NOME, SENHA, ATIVO) VALUES ('admin', 'admin', 1);
