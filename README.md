@@ -14,5 +14,4 @@ Utilizando as principais ferramentas de desenvolvimento e DevOps do mercado atua
 - ECR
 
 ## A Fazer
-- Criar monitoramento da infraestutura utilizando Zabbix
 - Criar monitoramento da aplicação utilizando Prometheus
