@@ -2,7 +2,7 @@ import Fastify, { FastifyInstance } from "fastify";
 const Server = Fastify({ logger: false, bodyLimit: 5000000 });
 
 Server.register(require("fastify-jwt"), {
-  secret: process.env.SECRET_KEY || "@lPh@0M3GaT3CnOL0G1A",
+  secret: process.env.SECRET_KEY || "FAZATUASENHASECRETAAI",
 });
 
 import fastifyCors from "@fastify/cors";
